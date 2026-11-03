@@ -151,11 +151,11 @@ android {
         create("dev") {
             dimension = "env"
             applicationId = "com.dev.audify.tv"
-            resValue("string", "app_name", "Audify TV")
+            resValue("string", "app_name", "ANINGU TV")
         }
         create("prod") {
             dimension = "env"
-            resValue("string", "app_name", "Audify TV")
+            resValue("string", "app_name", "ANINGU TV")
         }
     }
 

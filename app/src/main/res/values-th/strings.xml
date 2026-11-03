@@ -3,7 +3,7 @@ Copyright (c) 2026 Sachit. All rights reserved.
 Project: AUDIFY
 -->
 <resources>
-    <string name="app_name">Audify</string>
+    <string name="app_name">ANINGU</string>
     <string name="playback_channel_name">กำลังเล่น</string>
 <string name="download_notification_title">กำลังดาวน์โหลด</string>
     <string name="download_notification_starting">กำลังเริ่ม</string>

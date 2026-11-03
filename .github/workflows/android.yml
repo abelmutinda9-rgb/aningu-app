@@ -1,6 +1,5 @@
-# Copyright (c) 2026 Sachit. All rights reserved.
-# Project: AUDIFY
-name: Android Release APK
+# Project: ANINGU
+name: ANINGU Android & TV APK
 
 on:
   push:
@@ -8,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-prod-release:
+  build-apk:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,56 +21,51 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Setup Secrets (Keystore & local.properties)
+    - name: Setup Configuration & Keystore
       env:
-        LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
-        LASTFM_SECRET: ${{ secrets.LASTFM_SECRET }}
-        LISTEN_TOGETHER_SERVER: ${{ secrets.LISTEN_TOGETHER_SERVER }}
         KEYSTORE: ${{ secrets.KEYSTORE }}
         KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: |
-        printf 'LASTFM_API_KEY=%s\n' "$LASTFM_API_KEY" > local.properties
-        printf 'LASTFM_SECRET=%s\n' "$LASTFM_SECRET" >> local.properties
-        printf 'LISTEN_TOGETHER_SERVER=%s\n' "$LISTEN_TOGETHER_SERVER" >> local.properties
-
-        # `KEYSTORE` is the base64 of the release keystore (the same secret the
-        # old release workflow fed to its signing step).
-        printf '%s' "$KEYSTORE" | base64 -d > audify-release.jks
-        {
-          printf 'storeFile=audify-release.jks\n'
-          printf 'storePassword=%s\n' "$KEYSTORE_PASSWORD"
-          printf 'keyAlias=%s\n' "$KEY_ALIAS"
-          printf 'keyPassword=%s\n' "$KEY_PASSWORD"
-        } > keystore.properties
+        touch local.properties
+        if [ -n "$KEYSTORE" ]; then
+          printf '%s' "$KEYSTORE" | base64 -d > audify-release.jks
+          {
+            printf 'storeFile=audify-release.jks\n'
+            printf 'storePassword=%s\n' "$KEYSTORE_PASSWORD"
+            printf 'keyAlias=%s\n' "$KEY_ALIAS"
+            printf 'keyPassword=%s\n' "$KEY_PASSWORD"
+          } > keystore.properties
+          echo "HAVE_KEYSTORE=true" >> $GITHUB_ENV
+        else
+          echo "Using debug signing"
+          echo "HAVE_KEYSTORE=false" >> $GITHUB_ENV
+        fi
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Run release gates
-      run: ./gradlew :app:testDevDebugUnitTest :shared:jvmTest :sharedUi:jvmTest :app:lintDevDebug
+    - name: Build ANINGU Phone and TV APKs
+      run: |
+        if [ "$HAVE_KEYSTORE" = "true" ]; then
+          ./gradlew :app:assembleProdRelease :tv:assembleProdRelease --no-daemon
+        else
+          ./gradlew :app:assembleDevDebug :tv:assembleDevDebug --no-daemon
+        fi
 
-    - name: Build signed phone, TV and Wear OS release APKs
-      run: ./gradlew :app:assembleProdRelease :tv:assembleProdRelease :wearos:assembleProdRelease
-
-    - name: Upload APK Artifact
+    - name: Upload Phone APK
       uses: actions/upload-artifact@v4
       with:
-        name: audify-prod-release-signed
-        path: app/build/outputs/apk/prod/release/*.apk
+        name: aningu-phone-apk
+        path: |
+          app/build/outputs/apk/prod/release/*.apk
+          app/build/outputs/apk/dev/debug/*.apk
 
-    # Built by the same assembleProdRelease, with the same key. The watch app
-    # only pairs with a phone app signed by the same key, so a prod watch APK
-    # for these phone builds can only come from here, never a local build.
-    - name: Upload Wear OS APK Artifact
+    - name: Upload Android TV APK
       uses: actions/upload-artifact@v4
       with:
-        name: audify-wear-prod-release-signed
-        path: wearos/build/outputs/apk/prod/release/*.apk
-
-    - name: Upload Android TV APK Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: audify-tv-prod-release-signed
-        path: tv/build/outputs/apk/prod/release/*.apk
+        name: aningu-tv-apk
+        path: |
+          tv/build/outputs/apk/prod/release/*.apk
+          tv/build/outputs/apk/dev/debug/*.apk

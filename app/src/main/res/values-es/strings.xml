@@ -3,7 +3,7 @@ Copyright (c) 2026 Sachit. All rights reserved.
 Project: AUDIFY
 -->
 <resources>
-    <string name="app_name">Audify</string>
+    <string name="app_name">ANINGU</string>
     <string name="playback_channel_name">Reproduciendo</string>
 <string name="download_notification_title">Descargando</string>
     <string name="download_notification_starting">Iniciando</string>
