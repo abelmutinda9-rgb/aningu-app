@@ -17,7 +17,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Audify"
+rootProject.name = "ANINGU"
 include(":shared")
 include(":sharedUi")
 include(":app")

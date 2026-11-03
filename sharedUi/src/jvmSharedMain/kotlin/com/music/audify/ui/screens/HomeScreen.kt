@@ -711,7 +711,7 @@ private fun HomeTitle(
     ) {
         Icon(
             painter = painterResource(Res.drawable.ic_logo),
-            contentDescription = "Audify",
+            contentDescription = "ANINGU",
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier.width(40.dp).height(27.dp),
         )

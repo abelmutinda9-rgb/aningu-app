@@ -63,6 +63,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
+        setProperty("archivesBaseName", "ANINGU")
         applicationId = "com.music.audify"
         // 26 keeps reach wide; real-time blur (RenderEffect) kicks in on API 31+,
         // Haze falls back to a translucent scrim below that.
@@ -120,7 +121,7 @@ android {
         create("dev") {
             dimension = "env"
             applicationId = "com.dev.audify"
-            resValue("string", "app_name", "Audify Dev")
+            resValue("string", "app_name", "ANINGU")
         }
         create("prod") {
             dimension = "env"

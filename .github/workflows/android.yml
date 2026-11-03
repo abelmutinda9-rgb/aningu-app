@@ -6,6 +6,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-apk:
     runs-on: ubuntu-latest
@@ -54,18 +57,49 @@ jobs:
           ./gradlew :app:assembleDevDebug :tv:assembleDevDebug --no-daemon
         fi
 
-    - name: Upload Phone APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: aningu-phone-apk
-        path: |
-          app/build/outputs/apk/prod/release/*.apk
-          app/build/outputs/apk/dev/debug/*.apk
+    - name: Prepare & Rename APKs to ANINGU
+      run: |
+        mkdir -p build-output/phone build-output/tv
+        PHONE_APK=$(find app/build/outputs/apk -name "*.apk" | head -n 1)
+        if [ -n "$PHONE_APK" ]; then
+          cp "$PHONE_APK" build-output/phone/ANINGU.apk
+          echo "Phone APK copied: build-output/phone/ANINGU.apk"
+        fi
+        TV_APK=$(find tv/build/outputs/apk -name "*.apk" | head -n 1)
+        if [ -n "$TV_APK" ]; then
+          cp "$TV_APK" build-output/tv/ANINGU-TV.apk
+          echo "TV APK copied: build-output/tv/ANINGU-TV.apk"
+        fi
 
-    - name: Upload Android TV APK
+    - name: Upload Phone APK Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: aningu-tv-apk
-        path: |
-          tv/build/outputs/apk/prod/release/*.apk
-          tv/build/outputs/apk/dev/debug/*.apk
+        name: ANINGU-Phone-APK
+        path: build-output/phone/ANINGU.apk
+
+    - name: Upload Android TV APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ANINGU-TV-APK
+        path: build-output/tv/ANINGU-TV.apk
+
+    - name: Publish Direct APK Download Release
+      uses: softprops/action-gh-release@v2
+      if: success()
+      with:
+        tag_name: v1.0.0
+        name: "ANINGU Music App v1.0.0"
+        body: |
+          ### ANINGU Music Release
+          - **Phone APK:** `ANINGU.apk`
+          - **Android TV APK:** `ANINGU-TV.apk`
+          
+          Features:
+          - 72-hour device-bound free trial (no signup or payment required)
+          - M-Pesa monthly subscriptions (Student, Duo, Family)
+          - Music sources, player, lyrics, downloads & TV Leanback preserved
+        files: |
+          build-output/phone/ANINGU.apk
+          build-output/tv/ANINGU-TV.apk
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

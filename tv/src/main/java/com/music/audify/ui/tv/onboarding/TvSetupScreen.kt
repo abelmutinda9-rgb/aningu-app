@@ -227,7 +227,7 @@ private fun TvSignInStep(viewModel: MainViewModel, onContinue: () -> Unit) {
     TvSetupPage(
         title = if (signedIn) "Signed In" else "Sign In to YouTube Music",
         message = if (signedIn) {
-            "Audify will use ${account?.name ?: "your account"}'s library and recommendations."
+            "ANINGU will use ${account?.name ?: "your account"}'s library and recommendations."
         } else {
             "Bring your library, playlists and recommendations. You can also do this later in Settings."
         },

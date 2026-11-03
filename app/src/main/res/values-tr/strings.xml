@@ -83,10 +83,10 @@ Project: AUDIFY
     <string name="no_equalizer">Bu cihazda sistem ekolayzırı yok</string>
 <string name="update_available">Güncelleme mevcut: v%1$s</string>
     <string name="software_update">Yazılım Güncellemesi</string>
-    <string name="update_available_body">audify %1$s indirilmeye hazır.</string>
-    <string name="update_downloading_body">audify %1$s indiriliyor…</string>
-    <string name="update_ready_body">audify %1$s yüklenmeye hazır.</string>
-    <string name="update_failed_body">audify %1$s indirilemedi.</string>
+    <string name="update_available_body">aningu %1$s indirilmeye hazır.</string>
+    <string name="update_downloading_body">aningu %1$s indiriliyor…</string>
+    <string name="update_ready_body">aningu %1$s yüklenmeye hazır.</string>
+    <string name="update_failed_body">aningu %1$s indirilemedi.</string>
     <string name="download_now">Şimdi İndir</string>
     <string name="install_now">Şimdi Yükle</string>
     <string name="later">Daha sonra</string>
@@ -140,7 +140,7 @@ Project: AUDIFY
     <string name="cancel_all">Tümünü iptal et</string>
     <string name="language">Dil</string>
     <string name="app_language">Uygulama dili</string>
-    <string name="app_language_description">Audify tarafından kullanılan dili seçin.</string>
+    <string name="app_language_description">ANINGU tarafından kullanılan dili seçin.</string>
     <string name="english">İngilizce</string>
     <string name="spanish">İspanyolca</string>
     <string name="french">Fransızca</string>
@@ -238,10 +238,10 @@ Project: AUDIFY
     <string name="high_performance_active">%1$d Hz istendi. Android gerektiğinde bunu düşürebilir.</string>
 <string name="refresh_rate">Yenileme hızı</string>
     <string name="high_performance_before_enabling">Etkinleştirmeden önce</string>
-    <string name="high_performance_battery_warning">Önce Audify\'un pil kullanımını Sınırsız olarak ayarlayın. Daha yüksek yenileme hızları daha fazla pil, CPU ve GPU kullanır ve cihazınızı ısıtabilir.</string>
+    <string name="high_performance_battery_warning">Önce ANINGU\'un pil kullanımını Sınırsız olarak ayarlayın. Daha yüksek yenileme hızları daha fazla pil, CPU ve GPU kullanır ve cihazınızı ısıtabilir.</string>
     <string name="open_battery_settings">Pil ayarlarını aç</string>
     <string name="enable_high_performance_title">Yüksek performans modu etkinleştirilsin mi?</string>
-    <string name="enable_high_performance_confirmation">Yalnızca Audify\'un pil kullanımı Sınırsız olarak ayarlıysa etkinleştirin. Cihaz ısındığında veya pil azaldığında Android yine de yenileme hızını sınırlayabilir.</string>
+    <string name="enable_high_performance_confirmation">Yalnızca ANINGU\'un pil kullanımı Sınırsız olarak ayarlıysa etkinleştirin. Cihaz ısındığında veya pil azaldığında Android yine de yenileme hızını sınırlayabilir.</string>
     <string name="enable">Etkinleştir</string>
     <string name="not_yet">Henüz değil</string>
     <string name="activity">Etkinlik</string>
@@ -276,7 +276,7 @@ Project: AUDIFY
     <string name="discord_presence_footer">Parça, konum veya çalma durumu değiştiğinde kart güncellenir. Çalma durduğunda temizlenir.</string>
     <string name="discord_show_audio_quality">Ses kalitesini göster</string>
     <string name="discord_show_audio_quality_subtitle">Durum kartında Hi-Res, kayıpsız ve Dolby bilgileri</string>
-    <string name="discord_sign_in_footer">Giriş yapmak Discord\'un giriş sayfasını açar. Audify\'a hiçbir şey yazılmaz.</string>
+    <string name="discord_sign_in_footer">Giriş yapmak Discord\'un giriş sayfasını açar. ANINGU\'a hiçbir şey yazılmaz.</string>
     <string name="discord_token">Discord belirteci</string>
     <string name="discord_token_description">Discord hesap belirtecinizi yapıştırın. Bu cihazda şifreli kalır ve yalnızca Discord\'a gönderilir.</string>
     <string name="discord_token_rejected">Discord bu belirteci reddetti.</string>
@@ -429,7 +429,7 @@ Project: AUDIFY
     <string name="signing_in">Giriş yapılıyor…</string>
     <string name="sleep_timer">Uyku zamanlayıcısı</string>
     <string name="sources_no_lossless">Etkin hiçbir kaynak kayıpsız ses sağlayamıyor. Yeniden kodlama yapmadan mevcut kayıpsız dosyaları çalmak için özel bir modül ekleyin.</string>
-    <string name="sources_order_footer">Bir kaynakta parça yoksa veya ulaşılamıyorsa Audify bir sonrakini dener. YouTube üzerindeki kaynaklar daha iyi bir sürüm döndürdüklerinde onun kaydının yerini alabilir.</string>
+    <string name="sources_order_footer">Bir kaynakta parça yoksa veya ulaşılamıyorsa ANINGU bir sonrakini dener. YouTube üzerindeki kaynaklar daha iyi bir sürüm döndürdüklerinde onun kaydının yerini alabilir.</string>
     <string name="sources_order_header">Kaynaklar, bu sırayla denenir</string>
     <string name="sources_quality_capped">Bu bağlantı Yüksek kalitenin altına ayarlandığından, akışlar bu sınıra uyacak şekilde yeniden kodlanır. İndirmeler etkilenmez.</string>
     <string name="jiosaavn_mismatch_warning">Bir şarkının yanlış sürümünü eşleştirebilir. Riski sana ait olmak üzere etkinleştir.</string>
@@ -475,7 +475,7 @@ Project: AUDIFY
     <string name="biggest_day_note">En yoğun günün %2$s dinlemeyle %1$s oldu.</string>
     <string name="close_replay">Replay\'i Kapat</string>
     <string name="couldnt_draw_picture">Resim oluşturulamadı</string>
-    <string name="default_replay_holder">Audify dinleyicisi</string>
+    <string name="default_replay_holder">ANINGU dinleyicisi</string>
     <string name="different_albums">Farklı albümler</string>
     <string name="genres_pending">Dinleme geçmişin büyüdükçe türler görünecek</string>
     <string name="hour_am">%1$d, sabah</string>
@@ -503,7 +503,7 @@ Project: AUDIFY
     <string name="replay_artist_end"> yeniden dinlendi.</string>
     <string name="replay_artist_focus">Bir sanatçı</string>
     <string name="replay_artist_start">Ay boyunca, </string>
-    <string name="replay_empty_description">Biraz daha dinle, Audify geçmişini bir Replay\'e dönüştürsün.</string>
+    <string name="replay_empty_description">Biraz daha dinle, ANINGU geçmişini bir Replay\'e dönüştürsün.</string>
     <string name="replay_genre_end"> tarzını şekillendirdi.</string>
     <string name="replay_genre_focus">Türlerin</string>
     <string name="replay_genre_start">Birlikte, </string>
@@ -565,7 +565,7 @@ Project: AUDIFY
     <string name="webdav_subtitle">Sunucundaki müzikler</string>
     <string name="webdav_not_configured">Kaynaklar bölümünden bir sunucu bağla</string>
     <string name="webdav_empty">WebDAV sunucusunda ses dosyası bulunamadı. Ayarlar\'daki URL\'yi kontrol et.</string>
-    <string name="webdav_description">Audify\'u bir WebDAV müzik klasörüne yönlendir — Nextcloud müzik dizinin ya da WebDAV destekleyen herhangi bir sunucu.</string>
+    <string name="webdav_description">ANINGU\'u bir WebDAV müzik klasörüne yönlendir — Nextcloud müzik dizinin ya da WebDAV destekleyen herhangi bir sunucu.</string>
 <string name="webdav_server_url_hint">https://cloud.example.com/remote.php/dav/files/user/Music</string>
     <string name="webdav_disconnect">Bağlantıyı kes</string>
     <string name="webdav_test_failed">Ulaşılamadı: %1$s</string>
@@ -580,7 +580,7 @@ Project: AUDIFY
     <string name="smb_subtitle">Paylaşılan klasördeki müzikler</string>
     <string name="smb_not_configured">Kaynaklar bölümünden bir paylaşım bağla</string>
     <string name="smb_empty">SMB paylaşımında ses dosyası bulunamadı. Kaynaklar\'daki sunucuyu kontrol et.</string>
-    <string name="smb_description">Audify\'u paylaşılan bir müzik klasörüne yönlendir — SMB kullanan bir NAS ya da Windows paylaşımı.</string>
+    <string name="smb_description">ANINGU\'u paylaşılan bir müzik klasörüne yönlendir — SMB kullanan bir NAS ya da Windows paylaşımı.</string>
     <string name="smb_server_hint">nas.local veya 192.168.1.10:4445</string>
     <string name="smb_share_hint">Paylaşım adı, ör. Music</string>
     <string name="smb_folder_hint">Klasör (isteğe bağlı)</string>
@@ -622,7 +622,7 @@ Project: AUDIFY
     </plurals>
     <string name="no_local_albums">Burada henüz bir albüme veya çalma listesine ait bir şey yok. Tam bir albüm veya çalma listesi indir, burada görünecek.</string>
     <string name="play_your_replay">Replay\'ini çal</string>
-    <string name="counted_on_device_with_audify">Bu cihazda Audify ile sayıldı</string>
+    <string name="counted_on_device_with_audify">Bu cihazda ANINGU ile sayıldı</string>
     <string name="this_month">Bu ay</string>
     <string name="this_year">Bu yıl</string>
     <string name="all_time">Tüm zamanlar</string>
@@ -670,7 +670,7 @@ Project: AUDIFY
     <string name="listen_together_code">Parti kodu</string>
     <string name="listen_together_code_footer">Yüksek sesle oku ya da gönder. O ve I harfleri kullanılmaz, yani bir “o” her zaman sıfırdır.</string>
     <string name="copy_code">Kodu kopyala</string>
-    <string name="listen_together_share_text">Audify’da benimle dinle — parti kodu %1$s</string>
+    <string name="listen_together_share_text">ANINGU’da benimle dinle — parti kodu %1$s</string>
     <string name="listen_together_now_playing">Şu an çalıyor</string>
     <string name="listen_together_nothing_playing">Henüz bir şey çalmıyor</string>
     <string name="listen_together_listening">Dinliyor · %1$d / %2$d</string>
@@ -705,7 +705,7 @@ Project: AUDIFY
     <string name="listen_together_custom_server_dialog_message">Bu parti harici bir sunucuda barındırılıyor:\n\n%1$s\n\nParti sunucunu değiştirip %2$s partisine katılmak istiyor musun?</string>
     <string name="listen_together_custom_server_switch_and_join">Değiştir ve katıl</string>
     <string name="listen_together_official_server_dialog_title">Resmi sunucuya geçilsin mi?</string>
-    <string name="listen_together_official_server_dialog_message">Bu parti resmi Audify sunucusunda barındırılıyor.\n\nResmi sunucuya geri dönüp %1$s partisine katılmak istiyor musun?</string>
+    <string name="listen_together_official_server_dialog_message">Bu parti resmi ANINGU sunucusunda barındırılıyor.\n\nResmi sunucuya geri dönüp %1$s partisine katılmak istiyor musun?</string>
 <string name="listen_together_ping">%1$d ms</string>
     <string name="listen_together_server_offline_dash">—</string>
     <string name="listen_together_invalid_server_url">Geçersiz sunucu URL\'si. Lütfen geçerli bir adres gir (ör. https://your-server.com)</string>
@@ -725,9 +725,9 @@ Project: AUDIFY
     <string name="vietnamese">Vietnamca</string>
 <string name="add_addon">Eklenti ekle</string>
 
-    <string name="add_addon_detail">Audify\'u barındırdığınız veya bağlantısını aldığınız bir eklenti sunucusuna yönlendirin</string>
+    <string name="add_addon_detail">ANINGU\'u barındırdığınız veya bağlantısını aldığınız bir eklenti sunucusuna yönlendirin</string>
 
-    <string name="addon_url_description">Eklentinin URL\'sini yapıştırın — kök dizin veya manifest.json. Audify arama ve oynatma yeteneklerini okur.</string>
+    <string name="addon_url_description">Eklentinin URL\'sini yapıştırın — kök dizin veya manifest.json. ANINGU arama ve oynatma yeteneklerini okur.</string>
 
     <string name="advanced_options">Gelişmiş seçenekler</string>
 
@@ -760,7 +760,7 @@ Project: AUDIFY
 
     <string name="sort_library">Sırala</string>
 
-    <string name="source_unrecognised">Audify bu bağlantıyı tanıyamadı</string>
+    <string name="source_unrecognised">ANINGU bu bağlantıyı tanıyamadı</string>
 
     <string name="source_skipped_by_quality">%1$s üzerinde kullanılmıyor · kalite %2$s olarak ayarlandı</string>
 
@@ -793,7 +793,7 @@ Project: AUDIFY
 
     <string name="auto_login_title">Telefonunuzda YouTube\'a giriş yapın</string>
 
-    <string name="auto_login_subtitle">Giriş yapmak için telefonunuzda Audify\'u açın</string>
+    <string name="auto_login_subtitle">Giriş yapmak için telefonunuzda ANINGU\'u açın</string>
 
     <string name="auto_empty_recents_title">Son çalınan şarkı yok</string>
 
@@ -829,7 +829,7 @@ Project: AUDIFY
     <string name="smart_version_alignment">Akıllı ses hizalama</string>
     <string name="smart_version_alignment_subtitle">Tam karşılık gelen çalma anını bulmak için ses dalga biçimlerini analiz eder</string>
 
-    <string name="equalizer_footer">Audify içindeki sesi, sisteme ulaşmadan önce şekillendirir.</string>
+    <string name="equalizer_footer">ANINGU içindeki sesi, sisteme ulaşmadan önce şekillendirir.</string>
 
     <string name="equalizer_dynamic">Dinamik</string>
 
@@ -872,7 +872,7 @@ Project: AUDIFY
 
     <string name="system_equalizer_subtitle">Cihazınızın kendi paneli</string>
 
-    <string name="system_equalizer_footer">Audify\'unkinden sonra, tüm ses oturumunda çalışır. İkisini birden kullanmak ikisini de uygular.</string>
+    <string name="system_equalizer_footer">ANINGU\'unkinden sonra, tüm ses oturumunda çalışır. İkisini birden kullanmak ikisini de uygular.</string>
 
     <string name="eq_preset_flat">Düz</string>
 
@@ -1085,7 +1085,7 @@ Project: AUDIFY
     <string name="replay_period_monthly">Aylık</string>
     <string name="replay_period_yearly">Yıllık</string>
     <string name="replay_period_lifetime">Tüm zamanlar</string>
-    <string name="onboarding_title">Milyonlarca şarkı, Audify’da akışta</string>
+    <string name="onboarding_title">Milyonlarca şarkı, ANINGU’da akışta</string>
     <string name="onboarding_name_prompt">Size nasıl hitap edelim?</string>
     <string name="onboarding_name_hint">Adınız</string>
     <string name="onboarding_name_footer">Birlikte Dinle’yi kullandığınızda arkadaşlarınız bunu görür. Daha sonra Ayarlar’dan değiştirebilirsiniz.</string>
@@ -1095,7 +1095,7 @@ Project: AUDIFY
     <string name="onboarding_sign_in_google">Google ile giriş yap</string>
     <string name="onboarding_skip_sign_in">Girişi atla</string>
     <string name="onboarding_back">Geri</string>
-    <string name="wear_os_section">Wear OS için Audify</string>
+    <string name="wear_os_section">Wear OS için ANINGU</string>
     <string name="wear_os_page_title">Wear OS</string>
     <string name="wear_os_your_watches">Saatleriniz</string>
     <string name="wear_os_value_none">Saat yok</string>
@@ -1105,7 +1105,7 @@ Project: AUDIFY
     <string name="wear_os_no_watch">Bağlı saat yok</string>
     <string name="wear_os_no_watch_subtitle">Önce bir Wear OS saati, eşlik eden uygulamasından bu telefonla eşleştirin.</string>
     <string name="wear_os_checking">Denetleniyor…</string>
-    <string name="wear_os_not_installed">Audify bu saatte yüklü değil</string>
+    <string name="wear_os_not_installed">ANINGU bu saatte yüklü değil</string>
     <string name="wear_os_up_to_date">Güncel · %1$s</string>
     <string name="wear_os_update_available">Güncelleme var</string>
     <string name="wear_os_unknown">Yüklü · sürüm denetlenemedi</string>
@@ -1122,7 +1122,7 @@ Project: AUDIFY
     <string name="wear_os_searching">Saatiniz Wi-Fi üzerinde aranıyor…</string>
     <string name="wear_os_found">Saatiniz bulundu</string>
     <string name="wear_os_pairing">Eşleniyor…</string>
-    <string name="wear_os_installing">Audify saatinize yükleniyor…</string>
+    <string name="wear_os_installing">ANINGU saatinize yükleniyor…</string>
     <string name="wear_os_installed">Yüklendi. Kablosuz hata ayıklamayı tekrar kapatabilirsiniz.</string>
     <string name="wear_os_failed">Olmadı (%1$s). Kodu denetleyip tekrar deneyin.</string>
     <string name="wear_os_unsupported">Bir saate yüklemek için bu telefonda Android 11 veya üzeri gerekir.</string>

@@ -76,6 +76,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
+        setProperty("archivesBaseName", "ANINGU-TV")
         // Its own id, so the TV app is a separate install from the phone app
         // rather than an upgrade over it (or under it).
         applicationId = "com.music.audify.tv"

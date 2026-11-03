@@ -57,7 +57,7 @@ fun TvUpdateDialog(update: AppUpdateChecker.UpdateInfo, onDismiss: () -> Unit) {
     val notes = remember(update.notes) { update.notes?.let(::plainNotes) }
 
     TvDialog(
-        title = "Audify ${update.version} Is Available",
+        title = "ANINGU ${update.version} Is Available",
         message = when {
             update.apkUrl == null -> "Scan the code with your phone to get this update from GitHub."
             state is DownloadState.Ready -> "Downloaded. Select Install Now to update."
