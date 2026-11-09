@@ -144,7 +144,7 @@ fun ListenTogetherScreen(
      *
      * @see PartyServerEditor for why it cannot live on this screen.
      */
-    onEditServer: () -> Unit,
+    onEditServer: () -> Unit = {},
 ) {
     val context = LocalContext.current
     val shareTextFormat = stringResource(R.string.listen_together_share_text)
@@ -558,39 +558,7 @@ fun ListenTogetherScreen(
         // applies to, why it greys out, what becomes of a half-typed address
         // when the page is scrolled away from. Behind a row there is nothing
         // half-typed to explain — the same shape as the ListenBrainz token.
-        SettingsGroup(
-            header = stringResource(R.string.listen_together_custom_server),
-            footer = stringResource(R.string.listen_together_custom_server_footer),
-        ) {
-            SettingsRow(
-                icon = Icons.Rounded.Dns,
-                title = stringResource(R.string.listen_together_custom_server),
-                subtitleContent = {
-                    Text(
-                        text = customServer.ifBlank {
-                            stringResource(R.string.listen_together_using_default)
-                        },
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                    if (customServer.isNotBlank()) {
-                        Spacer(Modifier.height(4.dp))
-                        ServerConnectionLine(connectionState)
-                    }
-                },
-                // Locked while in a party: changing the address under a live
-                // membership would leave this device holding a token for a
-                // server it no longer talks to, and the party unable to say
-                // why it went quiet.
-                enabled = !state.inParty && !busy,
-                onClick = onEditServer,
-                trailing = if (busy) ({ Spinner() }) else null,
-            )
-        }
-
-        Spacer(Modifier.height(32.dp))
+                Spacer(Modifier.height(32.dp))
     }
 }
 

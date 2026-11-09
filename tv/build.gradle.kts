@@ -70,13 +70,16 @@ val listenTogetherServer: String = (
  */
 val betaSuffix = ""
 
+base {
+    archivesName.set("ANINGU-TV")
+}
+
 android {
     namespace = "com.music.audify"
     // InnerTubeX's AAR requires compiling against 37; targetSdk (runtime behaviour) stays 36.
     compileSdk = 37
 
     defaultConfig {
-        setProperty("archivesBaseName", "ANINGU-TV")
         // Its own id, so the TV app is a separate install from the phone app
         // rather than an upgrade over it (or under it).
         applicationId = "com.music.audify.tv"
@@ -101,7 +104,7 @@ android {
         // apart by name (AudifyTV-v1.8.apk, AudifyTV-v1.8_x86_64.apk), so
         // the updater installs the TV app here, never the phone app. See
         // AppUpdateChecker.apkAssetUrl.
-        buildConfigField("String", "UPDATE_APK_PREFIX", "\"AudifyTV-\"")
+        buildConfigField("String", "UPDATE_APK_PREFIX", "\"ANINGU-TV-\"")
     }
 
     splits {

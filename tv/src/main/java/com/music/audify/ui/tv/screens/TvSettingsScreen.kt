@@ -55,7 +55,7 @@ import com.music.audify.ui.tv.theme.LocalTvReduceMotion
 // Discord Rich Presence is hidden on TV for now; TvDiscordDialog is kept for when it returns.
 private enum class SettingsSheet { Theme, RefreshRate, Equalizer, Scrobbling, LyricsSources, Update, About }
 
-private const val DefaultBlurb = "Playback, sound and display preferences for Audify on this TV."
+private const val DefaultBlurb = "Playback, sound and display preferences for ANINGU on this TV."
 
 /**
  * Settings, as tvOS lays it out: the app on the left with a plain description of
@@ -275,7 +275,7 @@ fun TvSettingsScreen(
                 TvListRow(
                     title = "Appearance",
                     value = AppThemeOption.fromId(themeId).title,
-                    onFocused = { blurb = "The background behind Audify's pages." },
+                    onFocused = { blurb = "The background behind ANINGU's pages." },
                     onClick = { sheet = SettingsSheet.Theme },
                 )
             }
@@ -331,7 +331,7 @@ fun TvSettingsScreen(
                     TvListRow(
                         title = "Software Update",
                         value = "${update?.version.orEmpty()} Available",
-                        onFocused = { blurb = "Download and install the new version of Audify for TV." },
+                        onFocused = { blurb = "Download and install the new version of ANINGU for TV." },
                         onClick = { sheet = SettingsSheet.Update },
                     )
                 }

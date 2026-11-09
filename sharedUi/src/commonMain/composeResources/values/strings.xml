@@ -214,7 +214,7 @@ Project: AUDIFY
     <string name="weekly_recap_top_artist">Top artist · %1$s</string>
     <string name="weekly_recap_open">View this week</string>
     <string name="weekly_recap_dismiss">Dismiss weekly recap</string>
-    <string name="default_replay_holder">Audify listener</string>
+    <string name="default_replay_holder">ANINGU listener</string>
     <string name="member_since">Member since</string>
     <string name="import_spotify">Import Spotify</string>
     <string name="import_spotify_subtitle">From a playlist link</string>

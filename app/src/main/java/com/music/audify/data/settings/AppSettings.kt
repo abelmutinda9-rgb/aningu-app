@@ -369,7 +369,7 @@ object AppSettings {
     val showNerdStats = MutableStateFlow(false)
 
     /** Freezes the main player's mesh gradient instead of letting it drift/crossfade. */
-    val reduceAnimation = MutableStateFlow(false)
+    val reduceAnimation = MutableStateFlow(true)
 
     /**
      * Whether the welcome pages (party name, then YouTube sign-in) have been
@@ -421,7 +421,7 @@ object AppSettings {
     val progressiveScrollEdgeBlur = MutableStateFlow(true)
 
     /** Real backdrop-sampled glass (blur, lens refraction) on the floating nav bar, Android 12+ only. */
-    val liquidGlass = MutableStateFlow(false)
+    val liquidGlass = MutableStateFlow(true)
 
     /** Blurs unfocused lyric lines, keeping the active line sharp. */
     val lyricsBlur = MutableStateFlow(true)
@@ -875,17 +875,13 @@ object AppSettings {
         equalizerBands.value = readEqualizerBands()
         equalizerPreset.value = EqualizerPreset.matching(equalizerBands.value)
         playbackSpeed.value = prefs.getFloat(KEY_SPEED, 1.0f)
-        themeMode.value = runCatching {
-            ThemeMode.valueOf(prefs.getString(KEY_THEME, null) ?: "DARK")
-        }.getOrDefault(ThemeMode.DARK)
-        fontChoice.value = runCatching {
-            AppFontChoice.valueOf(prefs.getString(KEY_FONT_CHOICE, null) ?: AppFontChoice.AUDIFY.name)
-        }.getOrDefault(AppFontChoice.AUDIFY)
+        themeMode.value = ThemeMode.DARK
+        fontChoice.value = AppFontChoice.AUDIFY
         autoplay.value = prefs.getBoolean(KEY_AUTOPLAY, true)
         shuffleEnabled.value = prefs.getBoolean(KEY_SHUFFLE_ENABLED, false)
         repeatMode.value = prefs.getInt(KEY_REPEAT_MODE, Player.REPEAT_MODE_OFF)
         showNerdStats.value = prefs.getBoolean(KEY_NERD_STATS, false)
-        reduceAnimation.value = prefs.getBoolean(KEY_REDUCE_ANIMATION, false)
+        reduceAnimation.value = true
         onboardingComplete.value = prefs.getBoolean(KEY_ONBOARDING_COMPLETE, false)
         highPerformanceMode.value = prefs.getBoolean(KEY_HIGH_PERFORMANCE_MODE, false)
         performanceRefreshRate.value = normalizePerformanceRefreshRate(
@@ -900,15 +896,15 @@ object AppSettings {
         dontRepeatSuggestions.value = prefs.getBoolean(KEY_DONT_REPEAT_SUGGESTIONS, false)
         preferMusicOnly.value = prefs.getBoolean(KEY_PREFER_MUSIC_ONLY, false)
         smartVersionAlignment.value = prefs.getBoolean(KEY_SMART_VERSION_ALIGNMENT, true)
-        reduceDynamicBlur.value = prefs.getBoolean(KEY_REDUCE_BLUR, false)
-        progressiveScrollEdgeBlur.value = prefs.getBoolean(KEY_PROGRESSIVE_SCROLL_EDGE_BLUR, true)
-        liquidGlass.value = prefs.getBoolean(KEY_LIQUID_GLASS, false)
+        reduceDynamicBlur.value = false
+        progressiveScrollEdgeBlur.value = true
+        liquidGlass.value = true
         lyricsBlur.value = prefs.getBoolean(KEY_LYRICS_BLUR, true)
         lyricsOffsetMs.value = prefs.getInt(KEY_LYRICS_OFFSET_MS, 0)
             .coerceIn(MIN_LYRICS_OFFSET_MS, MAX_LYRICS_OFFSET_MS)
         translationLanguage.value = prefs.getString(KEY_TRANSLATION_LANGUAGE, "").orEmpty()
         if (highPerformanceMode.value) {
-            reduceAnimation.value = false
+            reduceAnimation.value = true
             reduceDynamicBlur.value = false
         }
         animatedCanvas.value = prefs.getBoolean(KEY_ANIMATED_CANVAS, true)
@@ -917,8 +913,8 @@ object AppSettings {
         prioritizeSpotifyCanvas.value = prefs.getBoolean(KEY_PRIORITIZE_SPOTIFY_CANVAS, false)
         signatureApiEnabled.value = prefs.getBoolean(KEY_SIGNATURE_API_ENABLED, false)
         signatureApiUrl.value = normalizeSignatureApiUrl(prefs.getString(KEY_SIGNATURE_API_URL, "").orEmpty())
-        fullBleedArtwork.value = prefs.getBoolean(KEY_FULL_BLEED_ARTWORK, true)
-        legacyMeshGradient.value = prefs.getBoolean(KEY_LEGACY_MESH_GRADIENT, false)
+        fullBleedArtwork.value = true
+        legacyMeshGradient.value = false
         lastPlayerScreen.value = runCatching {
             LastPlayerScreen.valueOf(
                 prefs.getString(KEY_LAST_PLAYER_SCREEN, null) ?: LastPlayerScreen.MAIN.name,

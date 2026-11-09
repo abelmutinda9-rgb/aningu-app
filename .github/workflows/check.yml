@@ -60,19 +60,19 @@ jobs:
       - name: Upload the dev APK
         uses: actions/upload-artifact@v4
         with:
-          name: audify-dev-debug
+          name: aningu-dev-debug
           path: app/build/outputs/apk/dev/debug/*.apk
 
       - name: Upload TV dev APKs
         uses: actions/upload-artifact@v4
         with:
-          name: audify-tv-dev-debug
+          name: aningu-tv-dev-debug
           path: tv/build/outputs/apk/dev/debug/*.apk
 
       - name: Upload Wear OS dev APKs
         uses: actions/upload-artifact@v4
         with:
-          name: audify-wear-dev-debug
+          name: aningu-wear-dev-debug
           path: wearos/build/outputs/apk/dev/debug/*.apk
 
       - name: Upload test reports

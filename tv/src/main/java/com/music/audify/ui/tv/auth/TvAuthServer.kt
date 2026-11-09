@@ -330,7 +330,7 @@ object TvAuthServer {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Audify TV • Mobile Remote</title>
+<title>ANINGU TV • Mobile Remote</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 body { background: #08080B; color: #FFF; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; min-height: 100vh; padding: 18px; display: flex; flex-direction: column; align-items: center; }
@@ -367,7 +367,7 @@ body { background: #08080B; color: #FFF; font-family: -apple-system, BlinkMacSys
 <body>
 <div class="header">
   <div class="logo-badge">♪</div>
-  <h1>Audify TV Remote</h1>
+  <h1>ANINGU TV Remote</h1>
 </div>
 
 <div class="card">
@@ -375,7 +375,7 @@ body { background: #08080B; color: #FFF; font-family: -apple-system, BlinkMacSys
     <img id="trackArt" class="art" src="" style="display:none;" />
     <div class="info">
       <div id="trackTitle" class="title">Loading TV...</div>
-      <div id="trackArtist" class="artist">Connecting to Audify TV</div>
+      <div id="trackArtist" class="artist">Connecting to ANINGU TV</div>
     </div>
   </div>
   <div class="progress-bar" id="pBar" onclick="handleSeek(event)">
@@ -473,7 +473,7 @@ updateStatus();
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audify TV • 1-Tap Sign In</title>
+<title>ANINGU TV • 1-Tap Sign In</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #08080B; color: #FFF; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; padding: 24px 16px; display: flex; flex-direction: column; align-items: center; }
@@ -488,7 +488,7 @@ textarea { width: 100%; height: 90px; background: rgba(0,0,0,0.5); border: 1px s
 <body>
 <div class="card" style="text-align: center;">
   <div style="width: 52px; height: 52px; border-radius: 50%; background: #FA2D48; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">♪</div>
-  <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 6px;">Sign In to Audify TV</h1>
+  <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 6px;">Sign In to ANINGU TV</h1>
   <p style="font-size: 14px; color: #A0A0AB;">Fast & easy login from your mobile phone</p>
 
   <div class="step-box" style="text-align: left; margin-top: 18px;">
@@ -525,7 +525,7 @@ textarea { width: 100%; height: 90px; background: rgba(0,0,0,0.5); border: 1px s
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audify TV • Connected</title>
+<title>ANINGU TV • Connected</title>
 <style>
 body { background: #08080B; color: #FFF; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; text-align: center; }
 .card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 32px; max-width: 380px; }
@@ -536,7 +536,7 @@ body { background: #08080B; color: #FFF; font-family: -apple-system, sans-serif;
 <div class="card">
   <div style="font-size: 48px; margin-bottom: 12px;">✅</div>
   <h1 style="font-size: 22px; font-weight: bold; margin-bottom: 8px;">Paired Successfully!</h1>
-  <p style="font-size: 14px; color: #AAA;">Your Audify TV is now connected. You can now use the mobile remote to control playback.</p>
+  <p style="font-size: 14px; color: #AAA;">Your ANINGU TV is now connected. You can now use the mobile remote to control playback.</p>
   <a href="/remote" class="btn">📱 Open TV Remote</a>
 </div>
 </body>

@@ -79,7 +79,7 @@ jobs:
       - name: Upload the TV dev APK
         uses: actions/upload-artifact@v4
         with:
-          name: audify-tv-dev-debug
+          name: aningu-tv-dev-debug
           path: tv/build/outputs/apk/dev/debug/*universal*.apk
 
       - name: Upload build reports

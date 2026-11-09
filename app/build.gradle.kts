@@ -57,13 +57,16 @@ val listenTogetherServer: String = (
 // See the root build.gradle.kts: one version for the phone and its watch app.
 val betaSuffix = rootProject.extra["audifyBetaSuffix"] as String
 
+base {
+    archivesName.set("ANINGU")
+}
+
 android {
     namespace = "com.music.audify"
     // InnerTubeX's AAR requires compiling against 37; targetSdk (runtime behaviour) stays 36.
     compileSdk = 37
 
     defaultConfig {
-        setProperty("archivesBaseName", "ANINGU")
         applicationId = "com.music.audify"
         // 26 keeps reach wide; real-time blur (RenderEffect) kicks in on API 31+,
         // Haze falls back to a translucent scrim below that.
@@ -88,7 +91,7 @@ android {
         // Which release assets are this app's: the phone and TV APKs ship in
         // the same GitHub release, told apart by file name. See
         // AppUpdateChecker.apkAssetUrl.
-        buildConfigField("String", "UPDATE_APK_PREFIX", "\"Audify-\"")
+        buildConfigField("String", "UPDATE_APK_PREFIX", "\"ANINGU-\"")
     }
 
     splits {

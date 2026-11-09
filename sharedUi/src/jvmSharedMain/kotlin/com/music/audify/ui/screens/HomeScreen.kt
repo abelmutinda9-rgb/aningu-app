@@ -110,7 +110,7 @@ import com.music.audify.ui.components.PlayingAccent
 import com.music.audify.ui.components.PullToRefresh
 import com.music.audify.ui.components.SHELF_CARD_WIDTH
 import com.music.audify.ui.components.SearchPlayingBars
-import com.music.audify.ui.components.SignInBanner
+import com.music.audify.ui.components.BujuuBillboard
 import com.music.audify.ui.components.feedMoreSkeleton
 import com.music.audify.ui.player.PlayerSettings
 import com.music.audify.ui.components.feedSkeleton
@@ -249,10 +249,8 @@ fun HomeScreen(
                     )
                 }
             }
-            if (!signedIn && onSignIn != null) {
-                item {
-                    SignInBanner(onSignIn = onSignIn, modifier = Modifier.padding(bottom = 8.dp))
-                }
+            item(key = "bujuu-billboard") {
+                BujuuBillboard(modifier = Modifier.padding(bottom = 8.dp))
             }
             if (timeAwareShelf != null) {
                 item(key = "time-aware-discovery-shelf") {

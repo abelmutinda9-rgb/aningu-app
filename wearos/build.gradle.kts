@@ -55,11 +55,11 @@ android {
         create("dev") {
             dimension = "env"
             applicationId = "com.dev.audify"
-            resValue("string", "app_name", "Audify Dev")
+            resValue("string", "app_name", "ANINGU Dev")
         }
         create("prod") {
             dimension = "env"
-            resValue("string", "app_name", "Audify")
+            resValue("string", "app_name", "ANINGU")
         }
     }
 

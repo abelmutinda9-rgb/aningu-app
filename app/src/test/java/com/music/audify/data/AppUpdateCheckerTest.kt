@@ -19,9 +19,9 @@ class AppUpdateCheckerTest {
     @Test
     fun prefersTheMatchingAbiOverTheUniversalApk() {
         val release = release(
-            "Audify-v1.8.3.apk" to "https://example.test/universal.apk",
-            "Audify-v1.8.3_arm64-v8a.apk" to "https://example.test/arm64.apk",
-            "Audify-v1.8.3_x86_64.apk" to "https://example.test/x86.apk",
+            "ANINGU-v1.8.3.apk" to "https://example.test/universal.apk",
+            "ANINGU-v1.8.3_arm64-v8a.apk" to "https://example.test/arm64.apk",
+            "ANINGU-v1.8.3_x86_64.apk" to "https://example.test/x86.apk",
         )
 
         assertEquals(
@@ -33,8 +33,8 @@ class AppUpdateCheckerTest {
     @Test
     fun followsDeviceAbiPreferenceOrder() {
         val release = release(
-            "Audify-v1.8.3_arm64-v8a.apk" to "https://example.test/arm64.apk",
-            "Audify-v1.8.3_x86_64.apk" to "https://example.test/x86.apk",
+            "ANINGU-v1.8.3_arm64-v8a.apk" to "https://example.test/arm64.apk",
+            "ANINGU-v1.8.3_x86_64.apk" to "https://example.test/x86.apk",
         )
 
         assertEquals(
@@ -46,8 +46,8 @@ class AppUpdateCheckerTest {
     @Test
     fun fallsBackToUniversalWhenNoSupportedAbiIsPublished() {
         val release = release(
-            "Audify-v1.8.3.apk" to "https://example.test/universal.apk",
-            "Audify-v1.8.3_arm64-v8a.apk" to "https://example.test/arm64.apk",
+            "ANINGU-v1.8.3.apk" to "https://example.test/universal.apk",
+            "ANINGU-v1.8.3_arm64-v8a.apk" to "https://example.test/arm64.apk",
         )
 
         assertEquals(
@@ -59,7 +59,7 @@ class AppUpdateCheckerTest {
     @Test
     fun neverSelectsTheTvApk() {
         val release = release(
-            "AudifyTV-v1.8.3.apk" to "https://example.test/tv.apk",
+            "ANINGU-TV-v1.8.3.apk" to "https://example.test/tv.apk",
         )
 
         assertEquals(null, AppUpdateChecker.apkAssetUrl(release, listOf("arm64-v8a")))
@@ -69,9 +69,9 @@ class AppUpdateCheckerTest {
     fun ignoresAssetsThatAreNotUploadedPhoneApks() {
         val release = Json.parseToJsonElement(
             """{"assets":[
-                {"name":"Audify-v1.8.4.apk","browser_download_url":"https://example.test/pending.apk","state":"new"},
-                {"name":"Audify-v1.8.4.zip","browser_download_url":"https://example.test/archive.zip","state":"uploaded"},
-                {"name":"AudifyTV-v1.8.4.apk","browser_download_url":"https://example.test/tv.apk","state":"uploaded"}
+                {"name":"ANINGU-v1.8.4.apk","browser_download_url":"https://example.test/pending.apk","state":"new"},
+                {"name":"ANINGU-v1.8.4.zip","browser_download_url":"https://example.test/archive.zip","state":"uploaded"},
+                {"name":"ANINGU-TV-v1.8.4.apk","browser_download_url":"https://example.test/tv.apk","state":"uploaded"}
             ]}""",
         ).jsonObject
 

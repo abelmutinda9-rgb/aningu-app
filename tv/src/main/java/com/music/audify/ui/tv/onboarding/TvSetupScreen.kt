@@ -113,7 +113,7 @@ fun TvSetupScreen(
     ) { current ->
         when (current) {
             SetupStep.Welcome -> TvSetupPage(
-                title = "Welcome to Audify",
+                title = "Welcome to ANINGU",
                 message = "Your music, made for the big screen.",
                 hero = { TvAppMark(size = 106.dp) },
             ) {
